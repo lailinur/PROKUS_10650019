@@ -2,15 +2,10 @@
 <html>
 <head>
 
-<!--------------------
-LOGIN FORM
-by: Amit Jakhu
-www.amitjakhu.com
---------------------->
 
 <!--META-->
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Login Form</title>
+<title>Login Guru</title>
 
 <!--STYLESHEETS-->
 <link href="css/style.css" rel="stylesheet" type="text/css" />
@@ -38,7 +33,22 @@ $(document).ready(function() {
 
 </head>
 <body>
+<?php
 
+//menampilkan pesan eror
+if (!empty($_GET['error'])) {
+    if ($_GET['error'] == 1) {
+        echo "<script>alert('Username dan Password belum diisi!');</script>";
+    } else if ($_GET['error'] == 2) {
+        echo "<script>alert('Username belum diisi!');</script>";
+    } else if ($_GET['error'] == 3) {
+        echo "<script>alert('Password belum diisi!');</script>";
+    } else if ($_GET['error'] == 4) {
+        echo "<script>alert('Username dan Password tidak terdaftar!');</script>";
+    } 
+}
+?>
+?>
 <!--WRAPPER-->
 <div id="wrapper">
 
@@ -48,26 +58,26 @@ $(document).ready(function() {
     <!--END SLIDE-IN ICONS-->
 
 <!--LOGIN FORM-->
-<form name="login-form" class="login-form" action="" method="post">
+<form name="login-form" class="login-form" action="otentikasiG.php" method="post">
 
 	<!--HEADER-->
     <div class="header">
-    <!--TITLE--><h1>Login Form</h1><!--END TITLE-->
-    <!--DESCRIPTION--><span>Fill out the form below to login to my super awesome imaginary control panel.</span><!--END DESCRIPTION-->
+    <!--TITLE--><h1>Login Guru</h1><!--END TITLE-->
+    <!--DESCRIPTION--><span>Isikan Username dan Password anda pada form login dibawah ini.</span><!--END DESCRIPTION-->
     </div>
     <!--END HEADER-->
 	
 	<!--CONTENT-->
     <div class="content">
-	<!--USERNAME--><input name="username" type="text" class="input username" value="Username" onfocus="this.value=''" /><!--END USERNAME-->
-    <!--PASSWORD--><input name="password" type="password" class="input password" value="Password" onfocus="this.value=''" /><!--END PASSWORD-->
+	<!--USERNAME--><input name="nip" type="text" class="input username" value="Username" onfocus="this.value=''" /><!--END USERNAME-->
+    <!--PASSWORD--><input name="pass_guru" type="password" class="input password" value="Password" onfocus="this.value=''" /><!--END PASSWORD-->
     </div>
     <!--END CONTENT-->
     
     <!--FOOTER-->
     <div class="footer">
     <!--LOGIN BUTTON--><input type="submit" name="submit" value="Login" class="button" /><!--END LOGIN BUTTON-->
-    <!--REGISTER BUTTON--><input type="submit" name="submit" value="Register" class="register" /><!--END REGISTER BUTTON-->
+    
     </div>
     <!--END FOOTER-->
 

@@ -27,7 +27,7 @@
 			<li><img src ="images/users.png" /><span>Login</span>
 				<ul>
 					<li class="first"><a href="login_siswa.php"><img src ="images/users.png" />Sebagai Siswa</a> </li>
-					<li> <a href="login_guru"><img src ="images/guru.png" />Sebagai Guru</a> </li>
+					<li> <a href="login_guru.php"><img src ="images/guru.png" />Sebagai Guru</a> </li>
 					<li class="last"> <a href="login_admin.php"><img src ="images/users.png" />Sebagai Admin</a> </li>
 				</ul>
 			</li>
