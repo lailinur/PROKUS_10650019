@@ -1,5 +1,5 @@
 <?php
-session_start();
+
 $con = mysql_connect("localhost","root","");
 $con_db = mysql_select_db('smp',$con);
 if(!$con_db){

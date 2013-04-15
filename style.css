@@ -26,7 +26,7 @@ h2 {
 }
 
 h3 {
-	font-size: 1.6em;
+	font-size: 1.0em;
 }
 
 p, ul, ol {
@@ -257,7 +257,10 @@ img.aligncenter {
 	margin: 0px auto;
 	padding: 0px;
 }
-
+#page h3{
+	font-size: 20px;
+	color: #000000;
+}
 /* Content */
 
 #content {

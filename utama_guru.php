@@ -1,5 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
 <head>
 <meta name="keywords" content="" />
 <meta name="description" content="" />
@@ -24,14 +23,7 @@
 	<div id="menu-wrapper">
 		<ul id="menu">
 		<li><a href="logout.php"><img src ="images/home.png" /><span>Logout</span></a></li>
-		<li><a href="input.php"><img src ="images/nilai.png" /><span>Input</span></a>
-			<ul>
-					<li class="first"> <a href="in_datasiswa"><img src ="images/users.png" />Input Data Siswa</a> </li>
-					<li> <a href="in_jadwal"><img src ="images/email.png" />Input Jadwal</a> </li>
-					<li class="last"> <a href="in_berita"><img src ="images/users.png" />Input Berita</a> </li>
-			</ul>
-		</li>
-		
+		<li><a href="data_nilai.php"><img src ="images/users.png" />Input Data Nilai siswa</a>
 		<li><a href="jadwal.php"><img src ="images/cal.png" /><span>Jadwal</span></a></li>
 		</ul>
 		<script type="text/javascript">
@@ -51,8 +43,6 @@ $nip = $_SESSION['nip'];
 if (!isset($_SESSION['nip'])){
 header("Location:./login_guru.php");
 }
-$conn=mysql_connect("localhost", "root", "");
-mysql_select_db("tampil_data");
 $sql="select * from guru where nip='$nip'";
 $hasil=mysql_query($sql);
 while($row=mysql_fetch_array($hasil)){

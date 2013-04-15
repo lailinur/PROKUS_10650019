@@ -36,6 +36,3 @@ echo "<script>alert('Hi, $user_admin anda login sebagai Admin');document.locatio
 	header('location:login_admin.php?error= 4');
 }
 ?>
-
-
-

@@ -10,23 +10,6 @@
 <script type="text/javascript" src="jquery.dropotron-1.0.js"></script>
 </head>
 <body>
-
-<?php
-session_start();
-include 'config.php';
-$user_admin = $_SESSION['user_admin'];
-
-
-
-if (!isset($_SESSION['user_admin'])){
-header("Location:./login_admin.php");
-}
-$id = $_GET['nip'];
- 
-$query = mysql_query("select * from guru where nip='$id'") or die(mysql_error());
- 
-$data = mysql_fetch_array($query);
-?>
 <div id="wrapper">
 	<div id="header-wrapper">
 		<div id="header">
@@ -58,40 +41,55 @@ $data = mysql_fetch_array($query);
 	<!-- <div id="splash"><img src="images/pics01.jpg" width="980" height="300" alt="" /></div> -->
 	<div id="page">
 
-			<h2 class="title">Form Edit Data Guru</h2>
+			<h2 class="title">Data Guru</h2>
+<?php
+session_start();
+include 'config.php';
+$user_admin = $_SESSION['user_admin'];
 
-<form name="input_data" action="update_guru.php" method="post">
+
+
+if (!isset($_SESSION['user_admin'])){
+header("Location:./login_admin.php");
+}
+$conn=mysql_connect("localhost", "root", "");
+if (!empty($_GET['message']) && $_GET['message'] == 'success') {
+    echo '<h3>Berhasil menambah data!</h3>';
+}
+?>
+
+<form name="input_data" action="insertG.php" method="post">
 <table border="0" cellpadding="5" cellspacing="0">
     <tbody>
         <tr>
             <td>NIP</td>
             <td>:</td>
-            <td><input type="text" name="nip" maxlength="20" required="required" value="<?php echo $data['nip']; ?>" /></td>
+            <td><input type="text" name="nip" required="required" /></td>
         </tr>
         <tr>
-            <td>Nama</td>
+            <td>Nama Guru</td>
             <td>:</td>
-            <td><input type="text" name="nm_guru" maxlength="20" required="required" value="<?php echo $data['nm_guru']; ?>" /></td>
+            <td><input type="text" name="nm_guru" required="required" /></td>
         </tr>
         <tr>
-            <td>password</td>
+            <td>Password</td>
             <td>:</td>
-            <td><input type="password" name="pass_guru" required="required" value="<?php echo $data['pass_guru']; ?>" /></td>
+            <td><input type="text" name="pass_guru" required="required"> </textarea></td>
         </tr>
         <tr>
-            <td>Jenis kelamin</td>
+            <td>Jenis Kelamin</td>
             <td>:</td>
-            <td><input type="text" name="jk" required="required"value="<?php echo $data['jk']; ?>"  /></td>
+            <td><input type="text" name="jk" required="required" /></td>
         </tr>
         <tr>
             <td>Agama</td>
             <td>:</td>
-            <td><input type="date" name="agama"  required="required" value="<?php echo $data['agama']; ?>" /></td>
+            <td><input type="text" name="agama"  required="required" /></td>
         </tr>
-        <tr>
+		<tr>
             <td>Alamat</td>
             <td>:</td>
-            <td><input type="year" name="alamat" maxlength="14" required="required" value="<?php echo $data['alamat']; ?>" /></td>
+            <td><input type="year" name="alamat" required="required" /></td>
         </tr>
         <tr>
             <td align="right" colspan="3"><input type="submit" name="submit" value="Simpan" /></td>
@@ -102,6 +100,7 @@ $data = mysql_fetch_array($query);
 
 </form>
 <a href="view_guru.php"><h3>Lihat Data</h3></a>
+			
 		<div style="clear: both;">&nbsp;</div>
 	</div>
 	<!-- end #page -->
@@ -112,4 +111,3 @@ $data = mysql_fetch_array($query);
 <!-- end #footer -->
 </body>
 </html>
-edit_

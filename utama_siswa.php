@@ -1,5 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
 <head>
 <meta name="keywords" content="" />
 <meta name="description" content="" />
@@ -24,8 +23,8 @@
 	<div id="menu-wrapper">
 		<ul id="menu">
 		<li><a href="logout.php"><img src ="images/home.png" /><span>Logout</span></a></li>
-		<li><a href="nilai.php"><img src ="images/nilai.png" /><span>Nilai</span></a></li>
-		<li><a href="jadwal.php"><img src ="images/cal.png" /><span>Jadwal</span></a></li>
+		<li><a href="selectS.php"><img src ="images/nilai.png" /><span>Nilai</span></a></li>
+		<li><a href="jadwalS.php"><img src ="images/cal.png" /><span>Jadwal</span></a></li>
 		</ul>
 		<script type="text/javascript">
 			$('#menu').dropotron();
@@ -47,8 +46,8 @@ $nis = $_SESSION['nis'];
 if (!isset($_SESSION['nis'])){
 header("Location:./login_siswa.php");
 }
-$conn=mysql_connect("localhost", "root", "");
-mysql_select_db("tampil_data");
+//$conn=mysql_connect("localhost", "root", "");
+//mysql_select_db("smp");
 $sql="select * from siswa where nis='$nis'";
 $hasil=mysql_query($sql);
 while($row=mysql_fetch_array($hasil)){

@@ -1,5 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
 <head>
 <meta name="keywords" content="" />
 <meta name="description" content="" />
@@ -26,19 +25,14 @@
 		<li><a href="logout.php"><img src ="images/home.png" /><span>Logout</span></a></li>
 		<li><img src ="images/nilai.png" /><span>Input</span></a>
 			<ul>
-					<li class="first"> <a href="in_datasiswa"><img src ="images/users.png" />Input Data Siswa</a> </li>
-					<li> <a href="in_jadwal"><img src ="images/email.png" />Input Jadwal</a> </li>
-					<li class="last"> <a href="in_berita"><img src ="images/users.png" />Input Berita</a> </li>
+					<li class="first"> <a href="data_siswa.php"><img src ="images/users.png" />Input Data Siswa</a> </li>
+					<li> <a href="data_guru.php"><img src ="images/email.png" />Input Data Guru</a> </li>
+					<li> <a href="data_jadwal.php"><img src ="images/email.png" />Input Data Jadwal</a> </li>
+					<li> <a href="data_mapel.php"><img src ="images/email.png" />Input Data Mapel</a> </li>
+					<li> <a href="data_kelas.php"><img src ="images/email.png" />Input Data Kelas</a> </li>
+					<li class="last"> <a href="data_berita.php"><img src ="images/users.png" />Input Data Berita</a> </li>
 			</ul>
 		</li>
-		<li><img src ="images/nilai.png" /><span>Edit</span></a>
-			<ul>
-					<li class="first"> <a href="edit_guru.php"><img src ="images/users.png" />Edit Data Siswa</a> </li>
-					<li> <a href="in_jadwal"><img src ="images/email.png" />Edit Jadwal</a> </li>
-					<li class="last"> <a href="in_berita"><img src ="images/users.png" />Edit Berita</a> </li>
-			</ul>
-		</li>
-		
 		<li><a href="jadwal.php"><img src ="images/cal.png" /><span>Jadwal</span></a></li>
 		</ul>
 		<script type="text/javascript">
@@ -51,7 +45,7 @@
 
 			<h2 class="title">SELAMAT DATANG</h2>
 
-				<?
+				<?php
 //include 'userheader.php';
 session_start();
 include 'config.php';
@@ -63,7 +57,7 @@ if (!isset($_SESSION['user_admin'])){
 header("Location:./login_admin.php");
 }
 $conn=mysql_connect("localhost", "root", "");
-mysql_select_db("tampil_data");
+mysql_select_db("smp");
 $sql="select * from admin where user_admin='$user_admin'";
 $hasil=mysql_query($sql);
 while($row=mysql_fetch_array($hasil)){

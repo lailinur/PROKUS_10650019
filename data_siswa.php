@@ -10,23 +10,6 @@
 <script type="text/javascript" src="jquery.dropotron-1.0.js"></script>
 </head>
 <body>
-
-<?php
-session_start();
-include 'config.php';
-$user_admin = $_SESSION['user_admin'];
-
-
-
-if (!isset($_SESSION['user_admin'])){
-header("Location:./login_admin.php");
-}
-$id = $_GET['nip'];
- 
-$query = mysql_query("select * from guru where nip='$id'") or die(mysql_error());
- 
-$data = mysql_fetch_array($query);
-?>
 <div id="wrapper">
 	<div id="header-wrapper">
 		<div id="header">
@@ -42,7 +25,7 @@ $data = mysql_fetch_array($query);
 		<li><a href="logout.php"><img src ="images/home.png" /><span>Logout</span></a></li>
 		<li><img src ="images/nilai.png" /><span>Input</span></a>
 			<ul>
-					<li class="first"> <a href="data_siswa.php"><img src ="images/page_edit.png" />Input Data Siswa</a> </li>
+					<li class="first"> <a href="data_guru.php"><img src ="images/page_edit.png" />Input Data Guru</a> </li>
 					<li> <a href="data_jadwal.php"><img src ="images/page_edit.png" />Input Data Jadwal</a> </li>
 					<li> <a href="data_mapel.php"><img src ="images/page_edit.png" />Input Data Mapel</a> </li>
 					<li> <a href="data_kelas.php"><img src ="images/page_edit.png" />Input Data Kelas</a> </li>
@@ -58,40 +41,75 @@ $data = mysql_fetch_array($query);
 	<!-- <div id="splash"><img src="images/pics01.jpg" width="980" height="300" alt="" /></div> -->
 	<div id="page">
 
-			<h2 class="title">Form Edit Data Guru</h2>
+			<h2 class="title">Data Siswa</h2>
+<?php
+session_start();
+include 'config.php';
+$user_admin = $_SESSION['user_admin'];
 
-<form name="input_data" action="update_guru.php" method="post">
+
+
+if (!isset($_SESSION['user_admin'])){
+header("Location:./login_admin.php");
+}
+$conn=mysql_connect("localhost", "root", "");
+if (!empty($_GET['message']) && $_GET['message'] == 'success') {
+    echo '<h3>Berhasil menambah data!</h3>';
+}
+?>
+
+<form name="input_data" action="insert.php" method="post">
 <table border="0" cellpadding="5" cellspacing="0">
     <tbody>
         <tr>
-            <td>NIP</td>
+            <td>NIS</td>
             <td>:</td>
-            <td><input type="text" name="nip" maxlength="20" required="required" value="<?php echo $data['nip']; ?>" /></td>
+            <td><input type="text" name="nis" required="required" /></td>
         </tr>
         <tr>
-            <td>Nama</td>
+            <td>Nama Siswa</td>
             <td>:</td>
-            <td><input type="text" name="nm_guru" maxlength="20" required="required" value="<?php echo $data['nm_guru']; ?>" /></td>
-        </tr>
-        <tr>
-            <td>password</td>
-            <td>:</td>
-            <td><input type="password" name="pass_guru" required="required" value="<?php echo $data['pass_guru']; ?>" /></td>
-        </tr>
-        <tr>
-            <td>Jenis kelamin</td>
-            <td>:</td>
-            <td><input type="text" name="jk" required="required"value="<?php echo $data['jk']; ?>"  /></td>
-        </tr>
-        <tr>
-            <td>Agama</td>
-            <td>:</td>
-            <td><input type="date" name="agama"  required="required" value="<?php echo $data['agama']; ?>" /></td>
+            <td><input type="text" name="nm_siswa" required="required" /></td>
         </tr>
         <tr>
             <td>Alamat</td>
             <td>:</td>
-            <td><input type="year" name="alamat" maxlength="14" required="required" value="<?php echo $data['alamat']; ?>" /></td>
+            <td><input type="textarea" name="almt_siswa" required="required"> </textarea></td>
+        </tr>
+        <tr>
+            <td>Tempat Lahir</td>
+            <td>:</td>
+            <td><input type="text" name="tmp_lahir" required="required" /></td>
+        </tr>
+        <tr>
+            <td>Tanggal Lahir</td>
+            <td>:</td>
+            <td><input type="date" name="tgl_lahir"  required="required" /></td>
+        </tr>
+		<tr>
+            <td>Jenis Kelamin</td>
+            <td>:</td>
+            <td><input type="text" name="jk" required="required" /></td>
+        </tr>
+        <tr>
+            <td>Agama</td>
+            <td>:</td>
+            <td><input type="text" name="agama" required="required" /></td>
+        </tr>
+        <tr>
+            <td>Tahun Ajar</td>
+            <td>:</td>
+            <td><input type="year" name="th_ajar" maxlength="14" required="required" /></td>
+        </tr>
+		<tr>
+            <td>Angkatan</td>
+            <td>:</td>
+            <td><input type="year" name="angkatan" required="required" /></td>
+        </tr>
+        <tr>
+            <td>Password</td>
+            <td>:</td>
+            <td><input type="password" name="password" maxlength="14" required="required" /></td>
         </tr>
         <tr>
             <td align="right" colspan="3"><input type="submit" name="submit" value="Simpan" /></td>
@@ -101,7 +119,8 @@ $data = mysql_fetch_array($query);
 </table>
 
 </form>
-<a href="view_guru.php"><h3>Lihat Data</h3></a>
+<a href="view_siswa.php"><h3>Lihat Data</h3></a>
+			
 		<div style="clear: both;">&nbsp;</div>
 	</div>
 	<!-- end #page -->
@@ -112,4 +131,3 @@ $data = mysql_fetch_array($query);
 <!-- end #footer -->
 </body>
 </html>
-edit_

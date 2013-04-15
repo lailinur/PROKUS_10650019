@@ -1,5 +1,6 @@
 <?php
 session_start();
+
 include('config.php');
 
 //menangkap data dari login
@@ -24,7 +25,6 @@ if (empty($nis) && empty($password)) {
 $perintahnya ="select * from siswa where nis='$nis' and password='$password'";
 $jalankanperintahnya= mysql_query($perintahnya); 
 $ada_apa_enggak = mysql_num_rows($jalankanperintahnya);
-
 
 if ($ada_apa_enggak == 1) {
 
