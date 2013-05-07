@@ -1,3 +1,6 @@
+<?php
+include('config.php');
+?>
 <html>
 <head>
 <meta name="keywords" content="" />
@@ -11,22 +14,6 @@
 </head>
 <body>
 
-<?php
-session_start();
-include 'config.php';
-$user_admin = $_SESSION['user_admin'];
-
-
-
-if (!isset($_SESSION['user_admin'])){
-header("Location:./login_admin.php");
-}
-$id = $_GET['kd_kelas'];
- 
-$query = mysql_query("select * from kelas where kd_kelas='$id'") or die(mysql_error());
- 
-$data = mysql_fetch_array($query);
-?>
 <div id="wrapper">
 	<div id="header-wrapper">
 		<div id="header">
@@ -58,69 +45,60 @@ $data = mysql_fetch_array($query);
 	<!-- end #menu -->
 	<!-- <div id="splash"><img src="images/pics01.jpg" width="980" height="300" alt="" /></div> -->
 	<div id="page">
-<<<<<<< HEAD
-		<div id="sidebar-bg">
-			<div id="sidebar">
-			<h2>Form Edit Data Kelas</h2>
-=======
 
-			<h2 class="title">Form Edit Data Kelas</h2>
->>>>>>> a324517994fd517582318f938a2a41a8e4d738eb
 
-<form name="input_data" action="update_kelas.php" method="post">
-<table border="0" cellpadding="5" cellspacing="0">
-    <tbody>
-<<<<<<< HEAD
-        <tr class='dark'>
-=======
+<?php
+session_start();
+$user_admin = $_SESSION['user_admin'];
+
+
+
+if (!isset($_SESSION['user_admin'])){
+header("Location:./login_admin.php");
+}
+if (!empty($_GET['message']) && $_GET['message'] == 'success') {
+    echo '<h3>Berhasil meng-update data!</h3>';
+}
+?>
+<a href="data_mapel.php"><img src ="images/add.png" /><h3>DATA</h3></a>
+ 
+<table border="1" cellpadding="5" cellspacing="0">
+    <thead>
         <tr>
->>>>>>> a324517994fd517582318f938a2a41a8e4d738eb
-            <td>Kode Kelas</td>
-            <td>:</td>
-            <td><input type="text" name="kd_kelas" maxlength="20" required="required" value="<?php echo $data['kd_kelas']; ?>" /></td>
-        </tr>
-<<<<<<< HEAD
-		<tr class='light'>
-=======
-		<tr>
->>>>>>> a324517994fd517582318f938a2a41a8e4d738eb
-            <td>Nama Kelas</td>
-            <td>:</td>
-            <td><input type="text" name="nm_kelas" maxlength="20" required="required" value="<?php echo $data['nm_kelas']; ?>" /></td>
-        </tr>
-<<<<<<< HEAD
-        <tr class='dark'>
-=======
-        <tr>
-            <td>NIS</td>
-            <td>:</td>
-            <td><input type="text" name="nis" required="required" value="<?php echo $data['nis']; ?>" /></td>
-        </tr>
-        <tr>
+			<td>No.</td>
+			<td>Kode Kelas</td>
+			<td>Nama Kelas</td>
+			<td>NIS</td>
             <td>Tahun Ajar</td>
-            <td>:</td>
-            <td><input type="year" name="th_ajar"  required="required" value="<?php echo $data['th_ajar']; ?>" /></td>
+			<td colspan="2">Aksi</td>
         </tr>
+    </thead>
+    <tbody>
+    <?php
+    $query = mysql_query("select * from kelas");
+
+    $no = 1;
+    while ($data = mysql_fetch_array($query)) {
+    ?>
         <tr>
->>>>>>> a324517994fd517582318f938a2a41a8e4d738eb
-            <td align="right" colspan="3"><input type="submit" name="submit" value="Simpan" /></td>
+		<td><?php echo $no; ?></td>
+            <td><?php echo $data['kd_kelas']; ?></td>
+			<td><?php echo $data['nm_kelas']; ?></td>
+            <td><?php echo $data['nis']; ?></td>
+            <td><?php echo $data['th_ajar']; ?></td>
+            
+            <td><a href="edit_kelas.php?kd_kelas=<?php echo $data['kd_kelas']; ?>"><img src ="images/edit.png" /></a></td>
+			<td><a href="deleteK.php?kd_kelas=<?php echo $data['kd_kelas']; ?>"><img src ="images/bin.png" /></a></td>
         </tr>
-		
+    <?php
+        $no++;
+    }
+    ?>
     </tbody>
 </table>
-
-</form>
-<<<<<<< HEAD
-				</div>
-		</div>
-		<div style="clear: both;">&nbsp;</div>
-	</div>
-=======
-<a href="view_kelas.php"><h3>Lihat Data</h3></a>
 		<div style="clear: both;">&nbsp;</div>
 	</div>
 	<!-- end #page -->
->>>>>>> a324517994fd517582318f938a2a41a8e4d738eb
 </div>
 <div id="footer">
 	<p>2013. SIA SMP N 1 Bantul. Design by <a href="http://www.smpn1bantul.net">Herucakra</a>.</p>
@@ -128,8 +106,3 @@ $data = mysql_fetch_array($query);
 <!-- end #footer -->
 </body>
 </html>
-<<<<<<< HEAD
-
-=======
->>>>>>> a324517994fd517582318f938a2a41a8e4d738eb
-edit_

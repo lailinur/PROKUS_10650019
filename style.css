@@ -16,6 +16,7 @@ h1, h2, h3 {
 	font-weight: 400;
 	color: #3FA449;
 }
+<<<<<<< HEAD
 table tbody{
 	font-size: 12px;
 }
@@ -29,6 +30,9 @@ table tbody tr.dark{
 	color:#666666;
 	background-color:#E8E8E8;
 	}
+=======
+
+>>>>>>> a324517994fd517582318f938a2a41a8e4d738eb
 h1 {
 	font-size: 2em;
 }
@@ -284,10 +288,14 @@ img.aligncenter {
 	width: 590px;
 	padding: 10px 30px 0px 30px;
 }
+<<<<<<< HEAD
 .input{
 	padding:4px;
 	width:100%;
 }
+=======
+
+>>>>>>> a324517994fd517582318f938a2a41a8e4d738eb
 .post {
 	clear: both;
 	padding-bottom: 10px;
@@ -343,7 +351,11 @@ img.aligncenter {
 
 #sidebar {
 	overflow: hidden;
+<<<<<<< HEAD
 	width: 300px;
+=======
+	width: 270px;
+>>>>>>> a324517994fd517582318f938a2a41a8e4d738eb
 	padding: 30px 30px 20px 30px;
 }
 

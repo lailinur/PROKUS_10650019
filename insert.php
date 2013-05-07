@@ -12,6 +12,7 @@ $tmp_lahir = $_POST['tmp_lahir'];
 $tgl_lahir = $_POST['tgl_lahir'];
 $jk = $_POST['jk'];
 $agama = $_POST['agama'];
+<<<<<<< HEAD
 $angkatan = $_POST['angkatan'];
 $gb = $_FILES['gb']['name'];
 $up = './foto/';
@@ -32,10 +33,23 @@ if($move){
 if(move_uploaded_file($_FILES['gb']['tmp_name'],$alamat)){
 $query = mysql_query("insert into siswa values('$nis','$nm_siswa', '$password', '$almt_siswa', '$tmp_lahir', '$tgl_lahir','$jk','$agama', '$angkatan', '$alamat')") or die(mysql_error());
 
+=======
+$th_ajar = $_POST['th_ajar'];
+$angkatan = $_POST['angkatan'];
+ 
+//simpan data ke database
+$query = mysql_query("insert into siswa values('$nis','$nm_siswa', '$password', '$almt_siswa', '$tmp_lahir', '$tgl_lahir','$jk','$agama', '$th_ajar','$angkatan')") or die(mysql_error());
+ 
+>>>>>>> a324517994fd517582318f938a2a41a8e4d738eb
 if ($query) {
 $_SESSION['user_admin'] = $_POST['user_admin'];
 
 echo "<script>alert('berhasil menginputkan');document.location='data_siswa.php?message=success';</script>";
+<<<<<<< HEAD
 }
 }
+=======
+
+	}
+>>>>>>> a324517994fd517582318f938a2a41a8e4d738eb
 ?> 

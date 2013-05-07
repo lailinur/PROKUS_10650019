@@ -61,9 +61,18 @@ echo "<br>Tanggal Lahir : ".$row['tgl_lahir'];
 echo "<br>";
 echo "<br>Agama : ".$row['agama'];
 echo "<br>";
+<<<<<<< HEAD
 }
 ?>
 <img src="<?php echo $row['gb']; ?>" />
+=======
+echo "<br>Tahun Ajaran : ".$row['th_ajar'];
+
+
+}
+?>
+
+>>>>>>> a324517994fd517582318f938a2a41a8e4d738eb
 
 		<div style="clear: both;">&nbsp;</div>
 	</div>

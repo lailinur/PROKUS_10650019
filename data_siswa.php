@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?php
 include('config.php');
 session_start();
@@ -8,6 +9,8 @@ header("Location:./login_admin.php");
 }
 ?>
  
+=======
+>>>>>>> a324517994fd517582318f938a2a41a8e4d738eb
 <html>
 <head>
 <meta name="keywords" content="" />
@@ -30,7 +33,10 @@ header("Location:./login_admin.php");
 		</div>
 	</div>
 	<!-- end #header -->
+<<<<<<< HEAD
 	
+=======
+>>>>>>> a324517994fd517582318f938a2a41a8e4d738eb
 	<div id="menu-wrapper">
 		<ul id="menu">
 		<li><a href="logout.php"><img src ="images/home.png" /><span>Logout</span></a></li>
@@ -51,6 +57,7 @@ header("Location:./login_admin.php");
 	<!-- end #menu -->
 	<!-- <div id="splash"><img src="images/pics01.jpg" width="980" height="300" alt="" /></div> -->
 	<div id="page">
+<<<<<<< HEAD
 		<div id="content">
 			<div class="contentbg">
 				<h2>DATA SISWA</h2>
@@ -161,6 +168,80 @@ header("Location:./login_admin.php");
 			<td><input type="file" name="gb" required="required" /></td>
 		</tr>
         <tr class='dark'>
+=======
+
+			<h2 class="title">Data Siswa</h2>
+<?php
+session_start();
+include 'config.php';
+$user_admin = $_SESSION['user_admin'];
+
+
+
+if (!isset($_SESSION['user_admin'])){
+header("Location:./login_admin.php");
+}
+$conn=mysql_connect("localhost", "root", "");
+if (!empty($_GET['message']) && $_GET['message'] == 'success') {
+    echo '<h3>Berhasil menambah data!</h3>';
+}
+?>
+
+<form name="input_data" action="insert.php" method="post">
+<table border="0" cellpadding="5" cellspacing="0">
+    <tbody>
+        <tr>
+            <td>NIS</td>
+            <td>:</td>
+            <td><input type="text" name="nis" required="required" /></td>
+        </tr>
+        <tr>
+            <td>Nama Siswa</td>
+            <td>:</td>
+            <td><input type="text" name="nm_siswa" required="required" /></td>
+        </tr>
+        <tr>
+            <td>Alamat</td>
+            <td>:</td>
+            <td><input type="textarea" name="almt_siswa" required="required"> </textarea></td>
+        </tr>
+        <tr>
+            <td>Tempat Lahir</td>
+            <td>:</td>
+            <td><input type="text" name="tmp_lahir" required="required" /></td>
+        </tr>
+        <tr>
+            <td>Tanggal Lahir</td>
+            <td>:</td>
+            <td><input type="date" name="tgl_lahir"  required="required" /></td>
+        </tr>
+		<tr>
+            <td>Jenis Kelamin</td>
+            <td>:</td>
+            <td><input type="text" name="jk" required="required" /></td>
+        </tr>
+        <tr>
+            <td>Agama</td>
+            <td>:</td>
+            <td><input type="text" name="agama" required="required" /></td>
+        </tr>
+        <tr>
+            <td>Tahun Ajar</td>
+            <td>:</td>
+            <td><input type="year" name="th_ajar" maxlength="14" required="required" /></td>
+        </tr>
+		<tr>
+            <td>Angkatan</td>
+            <td>:</td>
+            <td><input type="year" name="angkatan" required="required" /></td>
+        </tr>
+        <tr>
+            <td>Password</td>
+            <td>:</td>
+            <td><input type="password" name="password" maxlength="14" required="required" /></td>
+        </tr>
+        <tr>
+>>>>>>> a324517994fd517582318f938a2a41a8e4d738eb
             <td align="right" colspan="3"><input type="submit" name="submit" value="Simpan" /></td>
         </tr>
 		
@@ -168,6 +249,7 @@ header("Location:./login_admin.php");
 </table>
 
 </form>
+<<<<<<< HEAD
 				</ul>
 			</div>
 		</div>
@@ -175,6 +257,14 @@ header("Location:./login_admin.php");
 </div>
 	</div>
 
+=======
+<a href="view_siswa.php"><h3>Lihat Data</h3></a>
+			
+		<div style="clear: both;">&nbsp;</div>
+	</div>
+	<!-- end #page -->
+</div>
+>>>>>>> a324517994fd517582318f938a2a41a8e4d738eb
 <div id="footer">
 	<p>2013. SIA SMP N 1 Bantul. Design by <a href="http://www.smpn1bantul.net">Herucakra</a>.</p>
 </div>

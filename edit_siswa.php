@@ -1,3 +1,19 @@
+<<<<<<< HEAD
+=======
+<html>
+<head>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<title>Halaman Admin</title>
+<link href="http://fonts.googleapis.com/css?family=Abel" rel="stylesheet" type="text/css" />
+<link href="style.css" rel="stylesheet" type="text/css" media="screen" />
+<script type="text/javascript" src="jquery-1.7.1.min.js"></script>
+<script type="text/javascript" src="jquery.dropotron-1.0.js"></script>
+</head>
+<body>
+
+>>>>>>> a324517994fd517582318f938a2a41a8e4d738eb
 <?php
 session_start();
 include 'config.php';
@@ -14,6 +30,7 @@ $query = mysql_query("select * from siswa where nis='$id'") or die(mysql_error()
  
 $data = mysql_fetch_array($query);
 ?>
+<<<<<<< HEAD
 <html>
 <head>
 <meta name="keywords" content="" />
@@ -26,6 +43,8 @@ $data = mysql_fetch_array($query);
 <script type="text/javascript" src="jquery.dropotron-1.0.js"></script>
 </head>
 <body>
+=======
+>>>>>>> a324517994fd517582318f938a2a41a8e4d738eb
 <div id="wrapper">
 	<div id="header-wrapper">
 		<div id="header">
@@ -41,6 +60,7 @@ $data = mysql_fetch_array($query);
 		<li><a href="logout.php"><img src ="images/home.png" /><span>Logout</span></a></li>
 		<li><img src ="images/nilai.png" /><span>Input</span></a>
 			<ul>
+<<<<<<< HEAD
 				<li class="first"> <a href="data_guru.php"><img src ="images/page_edit.png" />Input Data Guru</a> </li>
 				<li> <a href="data_jadwal.php"><img src ="images/page_edit.png" />Input Data Jadwal</a> </li>
 				<li> <a href="data_mapel.php"><img src ="images/page_edit.png" />Input Data Mapel</a> </li>
@@ -48,12 +68,23 @@ $data = mysql_fetch_array($query);
 				<li class="last"> <a href="data_berita.php"><img src ="images/page_edit.png" />Input Data Berita</a> </li>
 			</ul>
 		</li>
+=======
+					<li class="first"> <a href="data_guru.php"><img src ="images/page_edit.png" />Input Data Guru</a> </li>
+					<li> <a href="data_jadwal.php"><img src ="images/page_edit.png" />Input Data Jadwal</a> </li>
+					<li> <a href="data_mapel.php"><img src ="images/page_edit.png" />Input Data Mapel</a> </li>
+					<li> <a href="data_kelas.php"><img src ="images/page_edit.png" />Input Data Kelas</a> </li>
+					<li class="last"> <a href="data_berita.php"><img src ="images/page_edit.png" />Input Data Berita</a> </li>
+			</ul>
+		</li>
+
+>>>>>>> a324517994fd517582318f938a2a41a8e4d738eb
 		</ul>
 		<script type="text/javascript">
 			$('#menu').dropotron();
 		</script>
 	</div>
 	<!-- end #menu -->
+<<<<<<< HEAD
 	<div id="page">
 		<div id="sidebar-bg">
 			<div id="sidebar">
@@ -64,30 +95,59 @@ $data = mysql_fetch_array($query);
 <table border="0" cellpadding="5" cellspacing="0">
     <tbody>
         <tr class='dark'>
+=======
+	<!-- <div id="splash"><img src="images/pics01.jpg" width="980" height="300" alt="" /></div> -->
+	<div id="page">
+
+			<h2 class="title">Form Edit Data Siswa</h2>
+
+<form name="input_data" action="update_siswa.php" method="post">
+
+<table border="0" cellpadding="5" cellspacing="0">
+    <tbody>
+        <tr>
+>>>>>>> a324517994fd517582318f938a2a41a8e4d738eb
             <td>NIS</td>
             <td>:</td>
             <td><input type="text" name="nis" maxlength="20" required="required" value="<?php echo $data['nis']; ?>" /></td>
         </tr>
+<<<<<<< HEAD
         <tr class='light'>
+=======
+        <tr>
+>>>>>>> a324517994fd517582318f938a2a41a8e4d738eb
             <td>Nama Siswa</td>
             <td>:</td>
             <td><input type="text" name="nm_siswa" maxlength="20" required="required" value="<?php echo $data['nm_siswa']; ?>" /></td>
         </tr>
+<<<<<<< HEAD
         <tr class='dark'>
+=======
+        <tr>
+>>>>>>> a324517994fd517582318f938a2a41a8e4d738eb
             <td>Alamat</td>
             <td>:</td>
             <td><input type="textarea" name="almt_siswa" required="required" value="<?php echo $data['almt_siswa']; ?>" /></td>
         </tr>
+<<<<<<< HEAD
         <tr class='light'>
+=======
+        <tr>
+>>>>>>> a324517994fd517582318f938a2a41a8e4d738eb
             <td>Tempat Lahir</td>
             <td>:</td>
             <td><input type="text" name="tmp_lahir" required="required"value="<?php echo $data['tmp_lahir']; ?>"  /></td>
         </tr>
+<<<<<<< HEAD
         <tr class='dark'>
+=======
+        <tr>
+>>>>>>> a324517994fd517582318f938a2a41a8e4d738eb
             <td>Tanggal Lahir</td>
             <td>:</td>
             <td><input type="date" name="tgl_lahir"  required="required" value="<?php echo $data['tgl_lahir']; ?>" /></td>
         </tr>
+<<<<<<< HEAD
 		<tr class='light'><td>Jenis Kelamin</td>
 		<td>:</td>
 			<td><select name="jk" value="<?php echo $data['jk']?>">
@@ -95,26 +155,51 @@ $data = mysql_fetch_array($query);
 				<option value="P">Perempuan</option>
 			</select></td></tr>
         <tr class='dark'>
+=======
+		<tr>
+            <td>Jenis Kelamin</td>
+            <td>:</td>
+            <td><input type="text" name="jk" required="required" value="<?php echo $data['jk']; ?>" /></td>
+        </tr>
+        <tr>
+>>>>>>> a324517994fd517582318f938a2a41a8e4d738eb
             <td>Agama</td>
             <td>:</td>
             <td><input type="text" name="agama" required="required" value="<?php echo $data['agama']; ?>" /></td>
         </tr>
+<<<<<<< HEAD
 		<tr class='light'>
+=======
+        <tr>
+            <td>Tahun Ajar</td>
+            <td>:</td>
+            <td><input type="year" name="th_ajar" maxlength="14" required="required" value="<?php echo $data['th_ajar']; ?>" /></td>
+        </tr>
+		<tr>
+>>>>>>> a324517994fd517582318f938a2a41a8e4d738eb
             <td>Angkatan</td>
             <td>:</td>
             <td><input type="year" name="angkatan" required="required" value="<?php echo $data['angkatan']; ?>" /></td>
         </tr>
+<<<<<<< HEAD
         <tr class='dark'>
+=======
+        <tr>
+>>>>>>> a324517994fd517582318f938a2a41a8e4d738eb
             <td>Password</td>
             <td>:</td>
             <td><input type="password" name="password" maxlength="14" required="required" value="<?php echo $data['password']; ?>" /></td>
         </tr>
+<<<<<<< HEAD
 		<tr class='light'>
 			<td>Foto</td>
 			<td>:</td>
 			<td><input type="file" name="gb" value="<?php echo $data['gb']; ?>" /></td>
 		</tr>
         <tr class='dark'>
+=======
+        <tr>
+>>>>>>> a324517994fd517582318f938a2a41a8e4d738eb
             <td align="right" colspan="3"><input type="submit" name="submit" value="Simpan" /></td>
         </tr>
 		
@@ -122,10 +207,17 @@ $data = mysql_fetch_array($query);
 </table>
 
 </form>
+<<<<<<< HEAD
 			</div>
 		</div>
 		<div style="clear: both;">&nbsp;</div>
 	</div>
+=======
+<a href="view_siswa.php"><h3>Lihat Data</h3></a>
+		<div style="clear: both;">&nbsp;</div>
+	</div>
+	<!-- end #page -->
+>>>>>>> a324517994fd517582318f938a2a41a8e4d738eb
 </div>
 <div id="footer">
 	<p>2013. SIA SMP N 1 Bantul. Design by <a href="http://www.smpn1bantul.net">Herucakra</a>.</p>
